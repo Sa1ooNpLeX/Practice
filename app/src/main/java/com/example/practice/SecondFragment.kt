@@ -25,7 +25,9 @@ class SecondFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_second, container, false)
+        val rootView = inflater.inflate(R.layout.fragment_second, container, false)
+
+        return rootView
     }
 
     companion object {

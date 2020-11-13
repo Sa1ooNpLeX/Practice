@@ -5,12 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.TextView
+import kotlinx.android.synthetic.main.fragment_first.*
+import kotlinx.android.synthetic.main.fragment_first.view.*
 import okhttp3.OkHttpClient
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
-val URL = "https://api.hh.ru/areas"
-var okHttpClient: OkHttpClient = OkHttpClient()
 
 class FirstFragment : Fragment() {
     private var param1: String? = null
@@ -21,14 +23,21 @@ class FirstFragment : Fragment() {
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+
         }
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_first, container, false)
+        val rootView = inflater.inflate(R.layout.fragment_first, container, false)
+
+            var et: EditText = rootView.findViewById(R.id.et)
+            var tv: TextView = rootView.findViewById(R.id.tv)
+        return rootView
+
     }
 
     companion object {
@@ -41,5 +50,4 @@ class FirstFragment : Fragment() {
                 }
             }
     }
-
 }
