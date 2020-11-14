@@ -1,4 +1,4 @@
-package Models
+package com.example.practice.Models
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -9,9 +9,6 @@ data class Stats (
 	@SerializedName("Температура")
 	@Expose
 	val temp : Double?=null,
-	@SerializedName("По ощущению")
-	@Expose
-	val feels_like : Int?=null,
 	@SerializedName("Мин. температура")
 	@Expose
 	val temp_min : Double?=null,
@@ -23,5 +20,12 @@ data class Stats (
 	val pressure : Int?=null,
 	@SerializedName("Влажность")
 	@Expose
-	val humidity : Int?=null
+	val humidity : Int?=null,
+	@SerializedName("Скорость ветра")
+	@Expose
+	val windsp : Int?=null,
+	@SerializedName("Облачность")
+	@Expose
+	val clouds : Int?=null
 )
+

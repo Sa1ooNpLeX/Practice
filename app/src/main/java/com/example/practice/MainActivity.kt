@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
 
         val navController = Navigation.findNavController(this, R.id.nav_host_fragment)
         NavigationUI.setupWithNavController(bottomNavigationView, navController)
-        var et: EditText = findViewById(R.id.et)
-        var tv: TextView=findViewById(R.id.tv)
+
     }
 }

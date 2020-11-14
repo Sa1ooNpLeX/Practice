@@ -7,26 +7,24 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.practice.Interface.WeatherInterface
+import com.example.practice.Models.Stats
 import kotlinx.android.synthetic.main.fragment_first.*
 import kotlinx.android.synthetic.main.fragment_first.view.*
 import okhttp3.OkHttpClient
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 class FirstFragment : Fragment() {
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-
-        }
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,20 +32,21 @@ class FirstFragment : Fragment() {
     ): View? {
         val rootView = inflater.inflate(R.layout.fragment_first, container, false)
 
-            var et: EditText = rootView.findViewById(R.id.et)
-            var tv: TextView = rootView.findViewById(R.id.tv)
         return rootView
+        val temper =
+        val request = ServiceBuilder.buildService(WeatherInterface::class.java)
+        val call = request.getWeather(getString(R.string.api_key))
 
-    }
-
-    companion object {
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FirstFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        call.enqueue(object : Callback<Stats> {
+            override fun onResponse(call: Call<Stats>, response: Response<Stats>) {
+                if (response.isSuccessful){
+                    temp =
+                    }
                 }
             }
+            override fun onFailure(call: Call<Stats>, t: Throwable) {
+                Toast.makeText(this@FirstFragment, "${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 }
