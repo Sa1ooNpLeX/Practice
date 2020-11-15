@@ -28,4 +28,3 @@ data class Stats (
 	@Expose
 	val clouds : Int?=null
 )
-

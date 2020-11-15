@@ -1,11 +1,10 @@
-package com.example.practice
+package com.example.practice.Retrofit
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.EditText
-import android.widget.TextView
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
+import com.example.practice.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
