@@ -1,55 +1,150 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dp"
-    tools:context=".Fragments.FirstFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.FirstFragment"
+    android:background="@drawable/bg">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/Layouts">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            tools:layout_editor_absoluteX="-46dp"
+            tools:layout_editor_absoluteY="-75dp">
+
+            <LinearLayout
+                style="@style/Layouts"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/city"
+                    style="@style/Text10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/description"
+                    style="@style/Text10"
+                    android:layout_width="86dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Description"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width ="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/temperature"
+                        android:layout_height="wrap_content"
+                        android:layout_width ="wrap_content"
+                        android:textSize="39sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/C="
+                        style="@style/Layouts"
+                        android:layout_marginTop="10dp"
+                        android:textStyle="bold"
+                        android:text="°C"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width ="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/adviceText"
+                        android:textStyle="bold"
+                        style="@style/Advice"
+                        android:text="Совет: "/>
+                    <TextView
+                        android:id="@+id/advice"
+                        style="@style/Advice"
+                        android:hint="advice"/>
+                </LinearLayout>
 
 
-    <TextView
-        android:id="@+id/city_field"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="end"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/updated_field"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/city_field"
-        android:layout_centerHorizontal="true"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="13sp" />
+                    <LinearLayout
+                        android:id="@+id/LinerCardOne"
+                        style="@style/ConstraintCards"
+                        android:layout_width="match_parent"
+                        android:layout_height="147dp">
 
-    <TextView
-        android:id="@+id/weather_icon"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="70sp" />
+                        <LinearLayout
+                            style="@style/StatsCards"
+                            android:layout_height="170dp">
 
-    <TextView
-        android:id="@+id/temperature"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="40sp" />
+                            <ImageView
+                                style="@style/Icon"
+                                android:src="@drawable/pressure_4667" />
 
-    <TextView
-        android:id="@+id/details_field"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/weather_icon"
-        android:layout_centerHorizontal="true"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        />
+                            <TextView
+                                android:id="@+id/pressure"
+                                style="@style/StatHints"
+                                android:hint="pressure" />
 
-</RelativeLayout>
+                            <TextView
+                                style="@style/StatText"
+                                android:text="Давление" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            style="@style/StatsCards"
+                            android:layout_height="171dp">
+
+                            <ImageView
+                                style="@style/Icon"
+                                android:src="@drawable/wind" />
+
+                            <TextView
+                                android:id="@+id/wind"
+                                style="@style/StatHints"
+                                android:hint="wind" />
+
+                            <TextView
+                                style="@style/StatText"
+                                android:text="Скорость ветра" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
