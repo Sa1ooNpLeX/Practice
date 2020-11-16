@@ -24,7 +24,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/city"
+                    android:id="@+id/cities"
                     style="@style/Text10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -34,8 +34,9 @@
                 <TextView
                     android:id="@+id/description"
                     style="@style/Text10"
-                    android:layout_width="86dp"
+                    android:layout_width="333dp"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:hint="Description"
                     android:textSize="15sp" />
 
@@ -46,14 +47,14 @@
                     android:layout_marginTop="10dp">
 
                     <TextView
-                        android:id="@+id/temperature"
+                        android:id="@+id/temp"
                         android:layout_height="wrap_content"
                         android:layout_width ="wrap_content"
                         android:textSize="39sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/C="
+                        android:id="@+id/C"
                         style="@style/Layouts"
                         android:layout_marginTop="10dp"
                         android:textStyle="bold"
@@ -99,7 +100,6 @@
                             <ImageView
                                 style="@style/Icon"
                                 android:src="@drawable/pressure_4667" />
-
                             <TextView
                                 android:id="@+id/pressure"
                                 style="@style/StatHints"
@@ -116,26 +116,21 @@
 
                             <ImageView
                                 style="@style/Icon"
-                                android:src="@drawable/wind" />
+                                android:src="@drawable/humidity_weather_icon_148585" />
 
                             <TextView
-                                android:id="@+id/wind"
+                                android:id="@+id/humidity"
                                 style="@style/StatHints"
-                                android:hint="wind" />
+                                android:hint="Humidity" />
 
                             <TextView
                                 style="@style/StatText"
-                                android:text="Скорость ветра" />
+                                android:text="Влажность" />
                         </LinearLayout>
                     </LinearLayout>
-
                 </LinearLayout>
-
-
             </LinearLayout>
-
         </RelativeLayout>
-
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
@@ -146,5 +141,4 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </FrameLayout>

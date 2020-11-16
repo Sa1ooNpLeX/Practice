@@ -13,21 +13,26 @@ class Stats {
 		@SerializedName("pressure")
 		@Expose
 		var pressure: Double? = null
+
+		@SerializedName("humidity")
+		@Expose
+		var humidity: Double? = null
 	}
-	class Description{
+	class Weather {
 		@SerializedName("description")
 		@Expose
-		var description: String?=null
+		var description: String? = null
 	}
-	class Clouds {
 
-		@SerializedName("clouds")
+	class Clouds {
+		@SerializedName("all")
 		@Expose
-		var clouds: Double? = null
+		var all: Double? = null
 	}
+
 	class Wind{
 		@SerializedName("windsp")
 		@Expose
-		var windsp: Double? = null
+		var speed: Double? = null
 	}
 }

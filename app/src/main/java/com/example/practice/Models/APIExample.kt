@@ -8,13 +8,13 @@ class APIExample {
     @Expose
     val stats:Stats.Main?=null
 
-    @SerializedName("description")
+    @SerializedName("weather")
     @Expose
-    val descript:List<Stats.Description>?=null
+    val weather:List<Stats.Weather>?=null
 
     @SerializedName("clouds")
     @Expose
-    val clouds:Stats.Clouds?=null
+    val clouds: Stats.Weather?=null
 
     @SerializedName("wind")
     @Expose
